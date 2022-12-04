@@ -1,0 +1,52 @@
+int led = 13;
+int i = 1;
+
+const int LED_OUTPUT_PIN1 = 2;
+const int LED_OUTPUT_PIN2 = 4;
+const int LED_OUTPUT_PIN3 = 6;
+const int MAX_ANALOG_OUT = 255; // the max analog output on the Uno is 255
+const int DELAY_MS = 5;
+
+void setup() {
+  // put your setup code here, to run once:
+  //PIN 13 has an LED connected
+  pinMode(LED_OUTPUT_PIN1,OUTPUT);
+  pinMode(LED_OUTPUT_PIN2,OUTPUT);
+  pinMode(LED_OUTPUT_PIN3,OUTPUT);
+}
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  for(int i = 0; i <= MAX_ANALOG_OUT; i += 1){
+    analogWrite(LED_OUTPUT_PIN1, i);
+    delay(DELAY_MS);
+  }
+  for(int i = 0; i <= MAX_ANALOG_OUT; i += 1){
+    analogWrite(LED_OUTPUT_PIN2, i);
+    delay(DELAY_MS);
+  }
+  for(int i = 0; i <= MAX_ANALOG_OUT; i += 1){
+    analogWrite(LED_OUTPUT_PIN3, i);
+    delay(DELAY_MS);
+  }
+
+  for(int i = MAX_ANALOG_OUT; i >= 0; i -= 1){
+    analogWrite(LED_OUTPUT_PIN1, i);
+    delay(DELAY_MS);
+  }
+  for(int i = MAX_ANALOG_OUT; i >= 0; i -= 1){
+    analogWrite(LED_OUTPUT_PIN2, i);
+    delay(DELAY_MS);
+  }
+  for(int i = MAX_ANALOG_OUT; i >= 0; i -= 1){
+    analogWrite(LED_OUTPUT_PIN3, i);
+    delay(DELAY_MS);
+  }
+}
+
+
+  
+
+
